@@ -1,0 +1,270 @@
+.notesWorkspace {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  height: calc(100dvh - 112px);
+  min-height: 430px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, .08);
+}
+
+.notesTabs {
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+.tabsHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px;
+  color: #334155;
+  font-weight: 800;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.newNote {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 7px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tabList {
+  display: grid;
+  gap: 3px;
+  padding: 6px;
+}
+
+.noteTab {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #334155;
+  text-align: left;
+  cursor: pointer;
+}
+
+.noteTab:hover,
+.noteTab.active {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.noteTab span {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.noteTab small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.noteTab.active small {
+  color: #6366f1;
+}
+
+.emptyTabs {
+  padding: 20px 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.noteEditor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+}
+
+.editorTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+
+.noteId {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.editorActions {
+  display: flex;
+}
+
+.noteTitleInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0 0 6px;
+  border: 0;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 0;
+  height: 38px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.noteTitleInput:focus,
+.noteContentInput:focus {
+  box-shadow: none;
+}
+
+.noteTitleInput:focus {
+  border-color: #818cf8;
+}
+
+.noteContentInput {
+  flex: 1;
+  min-height: 0;
+  padding: 4px 2px;
+  border: 0;
+  resize: none;
+  overflow-y: auto;
+  line-height: 1.75;
+  font-size: 12px;
+}
+
+.saveMessage {
+  min-height: 18px;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+  text-align: right;
+}
+
+.editorEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.editorEmpty strong {
+  color: #334155;
+  font-size: 12px;
+}
+
+.editorEmpty span {
+  font-size: 14px;
+}
+
+@media (max-width: 780px) {
+  .notesWorkspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: calc(100dvh - 66px);
+    max-height: calc(100dvh - 66px);
+    min-height: 0;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .notesTabs {
+    border-right: 0;
+    border-bottom: 1px solid #273548;
+  }
+
+  .tabsHeading {
+    min-height: 38px;
+    padding: 7px 10px;
+  }
+
+  .tabsHeading .newNote {
+    display: none;
+  }
+
+  .tabList {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .noteTab {
+    flex: 0 0 118px;
+    min-width: 118px;
+    min-height: 44px;
+    padding: 9px 10px;
+  }
+
+  .noteTab small {
+    display: none;
+  }
+
+  .noteEditor {
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    padding: 10px 12px;
+    margin: 0;
+  }
+
+  .editorTop {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 78px;
+    align-items: start;
+    margin-bottom: 8px;
+  }
+
+  .noteTitleInput {
+    width: 90%;
+    min-height: 62px;
+
+    align-self: stretch;
+    font-size: 14px;
+  }
+
+  .editorActions {
+    display: grid;
+    width: 58px;
+    grid-template-columns: 58px;
+    gap: 6px;
+  }
+
+  .noteContentInput {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+    margin-top: 6px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .saveMessage {
+    flex: 0 0 auto;
+  }
+
+  .editorActions .button {
+    width: 58px;
+    min-width: 58px;
+    min-height: 28px;
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .saveMessage {
+    margin-top: 3px;
+  }
+}

@@ -1,0 +1,72 @@
+a {
+  color: #4f46e5;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  color: #3730a3;
+}
+
+@media (max-width: 780px) {
+  .tableWrap {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobileTable table,
+  .mobileTable tbody,
+  .mobileTable tr,
+  .mobileTable td {
+    display: block;
+  }
+
+  .mobileTable table {
+    min-width: 0;
+  }
+
+  .mobileTable thead {
+    display: none;
+  }
+
+  .mobileTable tr {
+    padding: 7px 10px;
+    border-bottom: 1px solid #273548;
+  }
+
+  .mobileTable td {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 5px;
+    min-height: 27px;
+    align-items: center;
+    padding: 2px 0;
+    border: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .mobileTable td::before {
+    color: #8d9caf;
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .mobileTable .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 6px;
+    margin-top: 3px;
+  }
+
+  .mobileTable .detailButton {
+    min-width: 32px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .mobileTable .actions::before {
+    display: none;
+  }
+}

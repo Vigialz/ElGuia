@@ -1,0 +1,31 @@
+select {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #172033;
+  outline: none;
+}
+
+select:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+@media (max-width: 780px) {
+  .modal {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+
+  .modalHead,
+  .modalFoot {
+    padding: 12px 14px;
+  }
+
+  .modalBody {
+    gap: 10px;
+    padding: 14px;
+  }
+}
